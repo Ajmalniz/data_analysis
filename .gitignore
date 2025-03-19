@@ -1,0 +1,9 @@
+.env
+__pycache__/
+lib/
+.DS_Store
+.venv
+.chainlit
+.files
+chainlit.md
+main.py

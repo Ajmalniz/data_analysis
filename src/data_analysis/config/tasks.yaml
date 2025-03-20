@@ -1,58 +1,69 @@
 suggestion_generation:
   description: >
-    Analyze the provided CSV data and generate actionable insights.
+    Analyze the CSV data containing snack food inventory and sales information.
+    Process the data by:
+    1. Ignoring rows with only commas and no data
+    2. Converting price fields ("Price", "TOTAL (PH)", "PRICE(HK)", "Total Cost", "SELL") from strings to floats, removing commas and extra spaces
+    3. Calculating:
+       - Gross profit percentage: ((SELL - Total Cost) / Total Cost) * 100
+       - Individual product profit margins: ((Sell/Pc - COST) / COST) * 100
+       - Total CBM and weight by summing respective columns
+    4. Identifying:
+       - Top products by order quantity, revenue, and profit margin
+       - Distribution patterns across location columns (LS, NP, etc.)
     Focus on:
-    - Key patterns and trends in the data
-    - Significant correlations
-    - Anomalies or areas of concern
-    - Actionable recommendations based on findings
+    - Overall financial metrics
+    - Top performing products
+    - Pricing structure (PHP vs HKD)
+    - Inventory distribution
+    - Recommendation for which product to buy based on highest profit margin and sales volume
   expected_output: >
-    A detailed analysis with clear, actionable suggestions based on
-    the data patterns identified.
+    A detailed analysis text including:
+    - Calculated financial metrics
+    - Ranked product lists
+    - Pricing observations
+    - Distribution insights
+    - Specific product purchase recommendation
 
 table_generation:
   description: >
-    Create summary tables from the analyzed data that highlight:
-    - Key metrics and their trends
-    - Important correlations
-    - Performance indicators
-    - Comparative analysis where relevant
-    
-    Format tables in markdown for clear presentation.
+    Create markdown tables from the processed data:
+    1. Top 5 products by order quantity (Order qty1)
+    2. Top 5 products by revenue (TOTAL (PH))
+    3. Top 5 products by profit margin (calculated)
+    4. Distribution summary showing total units per location
+    Process the data by:
+    - Converting numeric strings to floats
+    - Sorting data based on specified metrics
+    - Aggregating location data
   expected_output: >
-    A set of well-formatted markdown tables presenting key data insights.
+    Four markdown tables with headers and sorted data
 
 chart_generation:
   description: >
-    Generate visual representations of the data including:
-    - Trend analysis charts
-    - Distribution plots
-    - Comparison charts
-    - Key metric visualizations
-    
-    Save charts as image files and provide markdown references.
+    Describe visual representations of the data (no actual image generation):
+    1. Revenue distribution: Pie chart showing TOTAL (PH) by product
+    2. Profit margin comparison: Bar chart of top 10 products by profit margin
+    3. Order vs Profit: Scatter plot of Order qty1 vs Gross Profit %
+    4. Distribution heatmap: Heatmap of units across locations
+    Include specific data points and chart type descriptions.
   expected_output: >
-    A collection of charts saved as image files with markdown references
-    for inclusion in the final report.
+    Text descriptions of four charts with:
+    - Chart type
+    - Data points to be plotted
+    - Purpose of visualization
 
 final_report_assembly:
   description: >
-    Compile a comprehensive report that includes:
-    - Executive summary
-    - Key findings and insights
-    - Data visualization (charts and tables)
-    - Recommendations and next steps
-    
-    Save the final report as 'finalreport.md' in the reports directory.
+    Compile a comprehensive business report in markdown including:
+    - Overview: Basic data summary (number of products, suppliers)
+    - Product Information: General product details
+    - Financial Analysis: Key metrics from suggestion_generation
+    - Pricing Structure: Currency and rate analysis
+    - Inventory & Logistics: CBM and weight totals
+    - Top Products: Include tables from table_generation
+    - Recommendations: Including specific product to buy
+    - Chart Descriptions: From chart_generation
+    Use provided data and context from previous tasks.
   expected_output: >
-    A complete markdown report saved as 'finalreport.md' that integrates
-    all analyses, visualizations, and recommendations.
-
-
-
-
-
-
-
-
-
+    A complete markdown report saved as 'finalreport.md'

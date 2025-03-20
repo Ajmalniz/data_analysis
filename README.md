@@ -1,36 +1,50 @@
 # Data Analysis Project
 
-This project provides data analysis capabilities using Streamlit.
+## Overview
+A Streamlit-based data analysis application.
 
-## Setup Instructions
+## Installation
 
-1. **Set up Python Environment**
-   - Make sure you have Python installed on your system
-   - Install `uv` package manager if not already installed
+### Prerequisites
+- Python (latest stable version recommended)
+- UV package manager
 
-2. **Install Dependencies**
+### Clone the Repository
+```bash
+git clone https://github.com/Ajmalniz/data_analysis.git
+```
+
+### Setup Environment
+1. Install dependencies using UV:
    ```bash
    uv sync
    ```
 
-3. **Activate Virtual Environment**
+2. Activate the virtual environment:
    ```bash
-   # On Windows
+   # Windows
    .venv\Scripts\activate
-   
-   # On macOS/Linux
+
+   # macOS/Linux
    source .venv/bin/activate
    ```
-4. **Run the Application **
-   uv run kickoff 
 
-1. Start the Streamlit application:
-   ```bash
-   streamlit  run src/data_analysis/app.py
-   ```
+## Running the Application
 
-2. The application will automatically open in your default web browser. If it doesn't, you can access it at `http://localhost:8501/`
+### Method 1: Using UV
+```bash
+uv run kickoff
+```
 
-## Notes
-- Make sure all dependencies are properly installed before running the application
-- The application runs in watch mode by default, which means it will automatically reload when you make changes to the code
+### Method 2: Using Streamlit Directly
+```bash
+streamlit run src/data_analysis/app.py
+```
+
+The application will open automatically in your default web browser.
+Default URL: `http://localhost:8501/`
+
+## Development Notes
+- Application runs in watch mode
+- Changes to code will trigger automatic reload
+- Ensure all dependencies are installed before running

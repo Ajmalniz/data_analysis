@@ -26,10 +26,10 @@ This project provides data analysis capabilities using Streamlit.
 
 1. Start the Streamlit application:
    ```bash
-   chainlit  run src/data_analysis/app.py
+   streamlit  run src/data_analysis/app.py
    ```
 
-2. The application will automatically open in your default web browser. If it doesn't, you can access it at `http://localhost:8000`
+2. The application will automatically open in your default web browser. If it doesn't, you can access it at `http://localhost:8501/`
 
 ## Notes
 - Make sure all dependencies are properly installed before running the application

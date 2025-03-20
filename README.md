@@ -21,8 +21,8 @@ This project provides data analysis capabilities using Streamlit.
    # On macOS/Linux
    source .venv/bin/activate
    ```
-
-## Running the Application
+4. **Run the Application **
+   uv run kickoff 
 
 1. Start the Streamlit application:
    ```bash

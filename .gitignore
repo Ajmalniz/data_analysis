@@ -6,4 +6,3 @@ lib/
 .chainlit
 .files
 chainlit.md
-main.py
